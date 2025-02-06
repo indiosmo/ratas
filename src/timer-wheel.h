@@ -151,7 +151,7 @@ private:
 template<typename CBType>
 class TimerEvent : public TimerEventInterface {
 public:
-    explicit TimerEvent<CBType>(const CBType& callback)
+    explicit TimerEvent(const CBType& callback)
       : callback_(callback) {
     }
 
@@ -160,8 +160,8 @@ public:
     }
 
 private:
-    TimerEvent<CBType>(const TimerEvent<CBType>& other) = delete;
-    TimerEvent<CBType>& operator=(const TimerEvent<CBType>& other) = delete;
+    TimerEvent(const TimerEvent& other) = delete;
+    TimerEvent& operator=(const TimerEvent& other) = delete;
     CBType callback_;
 };
 
